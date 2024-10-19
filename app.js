@@ -10,21 +10,17 @@ let result = 0
 
 /*------------------------ Cached Element References ------------------------*/
 const display = document.querySelector('.display')
+display.innerText = result
 const numberButtons = document.querySelectorAll('.button.number')
 const operatorButtons = document.querySelectorAll('.button.operator')
 const equalsButton = document.querySelector('.button.equals')
 
-display.innerText = result
-
 /*----------------------------- Event Listeners -----------------------------*/
-
-
 numberButtons.forEach(button => { button.addEventListener('click', enterNumber)})
 operatorButtons.forEach(button => {button.addEventListener('click', preformOperation)})
 equalsButton.addEventListener('click', preformEquals)
 
 /*-------------------------------- Functions --------------------------------*/
-
 function enterNumber(event) {
     numArray.push(event.target.innerText)
     newNum = Number(numArray.join(''))
@@ -47,7 +43,6 @@ function preformOperation(event) {
 function preformEquals() {
     num2 = newNum
     numArray = []
-    
     switch (operator) {
         case '+':
             result = num1 + num2
