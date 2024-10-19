@@ -9,24 +9,18 @@ let operator = ''
 let result = 0
 
 /*------------------------ Cached Element References ------------------------*/
+const operatorButtons = document.querySelectorAll('.button.operator')
+const numberButtons = document.querySelectorAll('.button.number')
+const equalsButton = document.querySelector('.button.equals')
 const display = document.querySelector('.display')
 display.innerText = result
-const numberButtons = document.querySelectorAll('.button.number')
-const operatorButtons = document.querySelectorAll('.button.operator')
-const equalsButton = document.querySelector('.button.equals')
 
 /*----------------------------- Event Listeners -----------------------------*/
-numberButtons.forEach(button => { button.addEventListener('click', enterNumber)})
-operatorButtons.forEach(button => {button.addEventListener('click', preformOperation)})
+operatorButtons.forEach(button => {button.addEventListener('click', preformOperation) })
+numberButtons.forEach(button => { button.addEventListener('click', enterNumber) })
 equalsButton.addEventListener('click', preformEquals)
 
 /*-------------------------------- Functions --------------------------------*/
-function enterNumber(event) {
-    numArray.push(event.target.innerText)
-    newNum = Number(numArray.join(''))
-    display.innerText = newNum
-}
-
 function preformOperation(event) {
     num1 = newNum
     numArray = []
@@ -38,6 +32,12 @@ function preformOperation(event) {
             result = 0
             display.innerText = result
     }
+}
+
+function enterNumber(event) {
+    numArray.push(event.target.innerText)
+    newNum = Number(numArray.join(''))
+    display.innerText = newNum
 }
 
 function preformEquals() {
