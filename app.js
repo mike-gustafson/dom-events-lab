@@ -4,12 +4,11 @@ let newNum;
 let num1 = 0;
 let num2 = 0;
 let operator = '';
-let result = 0;
 
 /*------------------------ Cached Element References ------------------------*/
 const allButtons = document.querySelectorAll('.button');
 const display = document.querySelector('.display');
-display.innerText = result;
+display.innerText = 0;
 
 /*----------------------------- Event Listeners -----------------------------*/
 allButtons.forEach(button => {
@@ -31,8 +30,7 @@ function preformOperation(event) {
             numArray = [];
             num1 = 0;
             num2 = 0;
-            result = 0;
-            display.innerText = result;
+            display.innerText = num1;
     }
 }
 
@@ -47,18 +45,17 @@ function preformEquals() {
     numArray = [];
     switch (operator) {
         case '+':
-            result = num1 + num2;
+            num1 = num1 + num2;
             break;
         case '-':
-            result = num1 - num2;
+            num1 = num1 - num2;
             break;
         case '*':
-            result = num1 * num2;
+            num1 = num1 * num2;
             break;
         case '/':
-            result = num1 / num2;
+            num1 = num1 / num2;
             break;
     }
-    display.innerText = result;
-    num1 = result;
+    display.innerText = num1;
 }
