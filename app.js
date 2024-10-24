@@ -60,6 +60,5 @@ function preformEquals() {
             break;
     }
     display.innerText = result;
-    newNum = result;
-    num2 = 0;
+    num1 = result;
 }
