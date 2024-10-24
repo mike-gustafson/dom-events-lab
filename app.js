@@ -60,7 +60,6 @@ function preformEquals() {
         default:
             num2 = 0
             return
-
     }
     display.innerText = num1;
 }
