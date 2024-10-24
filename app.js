@@ -58,7 +58,9 @@ function preformEquals() {
             num1 = num1 / num2;
             break;
         default:
+            num2 = 0
             return
+
     }
     display.innerText = num1;
 }
